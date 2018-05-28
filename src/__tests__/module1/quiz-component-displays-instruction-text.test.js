@@ -13,6 +13,15 @@ try {
   quizComponentExists = false;
 }
 
+let quizQuestionComponentExists = false;
+let QuizQuestion;
+try {
+  QuizQuestion = require('../../QuizQuestion.js').default;
+  quizQuestionComponentExists = true;
+} catch (e) {
+  quizQuestionComponentExists = false;
+}
+
 let fs = require('fs');
 let quizData = require('../../quiz_data.json')
 
@@ -30,6 +39,11 @@ describe('Quiz Component', () => {
     if (quiz.find('.QuizQuestion').length > 0) {
       console.log('task 9 - found .QuizQuestion')
       assert(quiz.find('.QuizQuestion').text() == quizData.quiz_questions[0].instruction_text, "The div with a className of `QuizQuestion` isn't displaying the correct instruction text.")
+    } else if (quizQuestionComponentExists) {
+      if (quiz.containsMatchingElement(<QuizQuestion />)) {
+        console.log('task 9 - found <QuizQuestion />')
+      }
+      // this block will run after @quiz-question-component-has-render-method in module 2
     } else {
       console.log('task 9 - found nothing')
       assert(false, "There is not a div with a className of QuizQuestion yet.")
