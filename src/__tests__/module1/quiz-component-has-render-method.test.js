@@ -29,17 +29,18 @@ describe('Quiz Component', () => {
 
     if (quiz.containsMatchingElement(<div className="QuizQuestion"></div>)) {
       // this block will run after @quiz-component-has-quiz-question-div
-    } else if ( quiz.find('.QuizQuestion').getElements().length == 1) {
+      console.log('task 5 - found div.className=QuizQuestion')
+    } else if (quiz.find('.QuizQuestion').getElements().length == 1) {
+      console.log('task 5 - found .QuizQuestion')
       let el = quiz.find('.QuizQuestion').getElements()[0];
       if (el.props.className == 'QuizQuestion') {
         if (el.props.children == null) {
           assert(el.props.children == quizData.quiz_questions[0].instruction_text)
         }
       }
-    }  else if (quiz.find('QuizQuestion')) {
-      // this block will run after @quiz-component-displays-quiz-question-component
     } else {
       // this block will run until @quiz-component-has-quiz-question-div
+      console.log('task 5 - found <div>Quiz</div>')
       assert(quiz.containsMatchingElement(<div>Quiz</div>), "The Quiz component isn't rendering a single div with the text `Quiz`.")
     }
   })
