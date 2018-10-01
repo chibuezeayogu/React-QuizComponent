@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import QuizQuestion from './QuizQuestion'
 import QuizEnd from './QuizEnd'
 import quizData from './quiz_data.json';
+
 /**
  * 
  * @class Quiz
@@ -39,6 +40,17 @@ class Quiz extends Component {
     this.setState({ quiz_position: 1 })
   }
 
+  /**
+   *
+   * @description renders JSX element
+   *
+   * @method
+   *
+   * @memberof Quiz
+   *
+   * @returns { JSX }
+   *
+   */
   render() {
     const {
       state: { quiz_position },
