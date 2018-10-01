@@ -26,7 +26,7 @@ class QuizEnd extends Component {
    *
    * @memberof QuizEnd
    *
-   * @returns {JSX}
+   * @returns { JSX }
    *
    */
   render() {
