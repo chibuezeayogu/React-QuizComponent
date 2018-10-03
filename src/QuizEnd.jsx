@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { func } from 'prop-types';
 
 /**
  * 
@@ -31,7 +32,7 @@ class QuizEnd extends Component {
    */
   render() {
     return (
-      <div>
+      <div className="quiz-end">
         <p>Thanks for playing!</p>
         <button 
           onClick={this.handleResetClick}
@@ -42,5 +43,9 @@ class QuizEnd extends Component {
     )
   }
 }
+
+QuizEnd.propTypes = {
+  resetClickHandler: func.isRequired
+};
 
 export default QuizEnd;

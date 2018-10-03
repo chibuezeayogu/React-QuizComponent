@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { shape, func } from 'prop-types';
+
 import QuizQuestionButton from './QuizQuestionButton'
 
 /**
@@ -10,7 +12,7 @@ class QuizQuestion extends Component {
   constructor(props) {
     super(props)
 
-    this.state = { incorrectAnswer: false };
+    this.state = { incorrectAnswer: null };
   }
 
   /**
@@ -45,27 +47,31 @@ class QuizQuestion extends Component {
     const { quiz_question } = this.props;
     const { incorrectAnswer } = this.state;
     return (
-      <main>
-        <section>
-          <p>{quiz_question.instruction_text}</p>
-        </section>
-        <section className="buttons">
-          <ul>{quiz_question.answer_options.map((answer, index) => (
-            <QuizQuestionButton 
-              button_text={answer} 
-              key={index} 
-              clickHandler={this.handleClick} 
-            />
-          ))}
-          </ul>
-        </section>
-          {incorrectAnswer ?
-            <p className='error'>Sorry, that's not right</p> : 
-            null
-          }
-      </main>                
+      <>
+      <div className="question">
+        {quiz_question.instruction_text}
+      </div>
+      <div className="answers-container">
+        {quiz_question.answer_options.map((answer, index) => (
+          <QuizQuestionButton 
+            button_text={answer} 
+            key={index} 
+            clickHandler={this.handleClick} 
+          />
+        ))}
+      </div>
+        {incorrectAnswer ?
+          <p className='error'>Sorry, that's not right</p> : 
+          null
+        }
+      </>                
     )
   }
 }
+
+QuizQuestion.propTypes = {
+  quiz_question: shape({}),
+  showNextQuestionHandler: func
+};
 
 export default QuizQuestion;
