@@ -45,8 +45,8 @@ class QuizQuestionButton extends Component {
 }
 
 QuizQuestionButton.propTypes = {
-  button_text: string,
-  clickHandler: func
+  buttonText: string.isRequired,
+  clickHandler: func.isRequired
 };
 
 export default QuizQuestionButton;
