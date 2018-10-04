@@ -1,35 +1,82 @@
-.QuizQuestion {
-  display: flex;
-  justify-content: center;
-  font-size: 2em;
-  text-align: center;
-}
-.QuizEnd {
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  text-align: center;
-  font-size: 2em;
-  padding-top: 20px;
-}
-.QuizEnd a {
-  display: block;
-  padding-top: 20px;
-}
-ul {
-  padding: 0;
-  margin: 0;
-}
-.buttons {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-}
-button {
-  margin: 0.6em auto;
-  font-size: 1.5em;
-  display: block;
-}
 .error {
   color: red;
+  text-align: center;
+}
+
+.container,
+.question, 
+.button-container, 
+.quiz-end, 
+.question,
+.button,
+.answers-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  background: #F0F3F4;
+  height: 600px;
+  width: 80%;
+  position: relative;
+  border: 2px solid gray;
+  margin: 0 auto;
+  top: 100px;
+}
+
+.question, .button-container {
+  height: 20%;
+  width: 95%;
+  padding: 0px;
+  margin: 10px auto;
+  font-family: sans-serif;
+  align-items: center;
+  justify-content: center;
+}
+
+.question {
+  background: #FFFFFF;
+  font-size: 24px;
+}
+
+.answers-container {
+  background: #FFFFFF;
+  height: 50%;
+  width: 95%;
+  padding: 0px;
+  margin: 10px auto;
+  justify-content: flex-start;
+}
+
+.button {
+  height: 15%;
+  width: 95%;
+  font-size: 16px;
+  margin: 10px auto;
+  padding: 10px;
+  border: 1px solid black;
+  justify-content: flex-start;
+}
+
+.button:hover {
+  background: #ecf7f9;
+  color: black;
+}
+
+.quiz-end {
+  align-items: center;
+  height: 25%;
+  width: 70%;
+  margin: 0 auto;
+  border: 1px solid rgb(40, 110, 16);
+  padding: 10px;
+  background-color: aliceblue;
+  top: 200px;
+  position: relative;
+}
+
+.reset-button {
+  height: 50px;
+  width: 100px;
+  border: 1px solid rgb(40, 110, 16);
 }

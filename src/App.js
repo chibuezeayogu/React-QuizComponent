@@ -1,13 +1,11 @@
-import React, { Component } from 'react'
+import React from 'react';
+
+import quizData from './quizData.json';
 import './App.css'
 import Quiz from './Quiz'
 
-class App extends Component {
-  render() {
-    return (
-      <Quiz />
-    )
-  }
-}
+const App = () => (
+  <Quiz quizData={quizData} />
+)
 
 export default App 

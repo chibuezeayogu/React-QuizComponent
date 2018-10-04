@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
+
 import QuizQuestion from './QuizQuestion'
 import QuizEnd from './QuizEnd'
-import quizData from './quiz_data.json';
 
 /**
  * 
@@ -11,7 +11,7 @@ import quizData from './quiz_data.json';
 class Quiz extends Component {
   constructor(props) {
     super(props)
-    this.state = { quiz_position: 1 }
+    this.state = { quizPosition: 1 }
   }
 
   /**
@@ -24,7 +24,7 @@ class Quiz extends Component {
    */
   showNextQuestion = () => {
     this.setState((state) => ({
-      quiz_position: state.quiz_position + 1
+      quizPosition: state.quizPosition + 1
     }))
   }
 
@@ -37,7 +37,7 @@ class Quiz extends Component {
    * @returns { void }
    */
   handleResetClick = () => {
-    this.setState({ quiz_position: 1 })
+    this.setState({ quizPosition: 1 })
   }
 
   /**
@@ -52,19 +52,17 @@ class Quiz extends Component {
    *
    */
   render() {
-    const {
-      state: { quiz_position },
-      handleResetClick,
-      showNextQuestion
-    } = this;
-    const isQuizEnd = (quiz_position - 1) === quizData.quiz_questions.length;
+    const { quizPosition } = this.state;
+    const { quizData } = this.props;
+    const isQuizEnd = (quizPosition - 1) === quizData.quizQuestions.length;
+
     return (
-      <div>
+      <div className="container">
         {isQuizEnd ?
-          <QuizEnd resetClickHandler={handleResetClick} /> :
+          <QuizEnd resetClickHandler={this.handleResetClick} /> :
           <QuizQuestion
-            quiz_question={quizData.quiz_questions[quiz_position - 1]}
-            showNextQuestionHandler={showNextQuestion}
+            quizQuestion={quizData.quizQuestions[quizPosition - 1]}
+            showNextQuestionHandler={this.showNextQuestion}
           />
         }
       </div>

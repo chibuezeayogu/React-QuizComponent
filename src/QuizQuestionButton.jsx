@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { string, func } from 'prop-types';
 
 /**
  * 
@@ -15,8 +16,8 @@ class QuizQuestionButton extends Component {
    * @returns { void }
    */
   handleClick = () => {
-    const { button_text } = this.props;
-    this.props.clickHandler(button_text);
+    const { buttonText } = this.props;
+    this.props.clickHandler(buttonText);
   }
 
   /**
@@ -31,16 +32,21 @@ class QuizQuestionButton extends Component {
    *
    */
   render() {
+    const { buttonText } = this.props;
+
     return (
-      <li>
-        <button 
-          onClick={this.handleClick}
-        >
-        {this.props.button_text}
-        </button>
-      </li>
+      <button className="button"
+        onClick={this.handleClick}
+      >
+        {buttonText}
+      </button>
     )
   }
 }
+
+QuizQuestionButton.propTypes = {
+  button_text: string,
+  clickHandler: func
+};
 
 export default QuizQuestionButton;

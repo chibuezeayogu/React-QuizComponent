@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { shape, func, string, number, array } from 'prop-types';
+
 import QuizQuestionButton from './QuizQuestionButton'
 
 /**
@@ -10,7 +12,7 @@ class QuizQuestion extends Component {
   constructor(props) {
     super(props)
 
-    this.state = { incorrectAnswer: false };
+    this.state = { incorrectAnswer: null };
   }
 
   /**
@@ -21,8 +23,8 @@ class QuizQuestion extends Component {
    * 
    * @returns { void }
    */
-  handleClick = (button_text) => {
-    if (button_text === this.props.quiz_question.answer) {
+  handleClick = (buttonText) => {
+    if (buttonText === this.props.quizQuestion.answer) {
       this.setState({ incorrectAnswer: false });
       this.props.showNextQuestionHandler()
     } else {
@@ -42,30 +44,40 @@ class QuizQuestion extends Component {
    *
    */
   render() {
-    const { quiz_question } = this.props;
+    const { quizQuestion } = this.props;
     const { incorrectAnswer } = this.state;
+
     return (
-      <main>
-        <section>
-          <p>{quiz_question.instruction_text}</p>
-        </section>
-        <section className="buttons">
-          <ul>{quiz_question.answer_options.map((answer, index) => (
-            <QuizQuestionButton 
-              button_text={answer} 
-              key={index} 
-              clickHandler={this.handleClick} 
-            />
-          ))}
-          </ul>
-        </section>
-          {incorrectAnswer ?
-            <p className='error'>Sorry, that's not right</p> : 
-            null
-          }
-      </main>                
+      <>
+      <div className="question">
+        {quizQuestion.instructionText}
+      </div>
+      <div className="answers-container">
+        {quizQuestion.answerOptions.map((answer, index) => (
+          <QuizQuestionButton 
+            buttonText={answer} 
+            key={index} 
+            clickHandler={this.handleClick} 
+          />
+        ))}
+      </div>
+        {incorrectAnswer ?
+          <p className='error'>Sorry, that's not right</p> : 
+          null
+        }
+      </>                
     )
   }
 }
+
+QuizQuestion.propTypes = {
+  quizQuestion: shape({
+    id: number,
+    instructionText: string,
+    answerOptions: array,
+    answer: string
+  }).isRequired,
+  showNextQuestionHandler: func.isRequired
+};
 
 export default QuizQuestion;
