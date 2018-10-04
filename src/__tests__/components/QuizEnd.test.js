@@ -20,8 +20,8 @@ describe('QuizEnd Component', () => {
   })
 
   it('should call handleResetClick method', () => {
-    const handleSpy = jest.spyOn(wrapper.instance(), 'handleResetClick');
+    const handleResetSpy = jest.spyOn(wrapper.instance(), 'handleResetClick');
     wrapper.instance().handleResetClick();
-    expect(handleSpy).toHaveBeenCalled();
+    expect(handleResetSpy).toHaveBeenCalled();
   });
 });

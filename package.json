@@ -20,7 +20,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "eject": "react-scripts eject",
-    "test:dev": "jest --config jest.config.json -u --coverage"
+    "test": "jest --config jest.config.json -u --coverage"
   },
   "jest": {
     "verbose": true,

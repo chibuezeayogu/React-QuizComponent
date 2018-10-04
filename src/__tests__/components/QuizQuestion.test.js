@@ -28,7 +28,7 @@ describe('QuizQuestion Component', () => {
     expect(handleSpy).toHaveBeenCalled();
   });
 
-  it('should call handleResetClick method with wrong answer', () => {
+  it('should call handleClick method with wrong answer', () => {
     const handleSpy = jest.spyOn(wrapper.instance(), 'handleClick');
     wrapper.instance().handleClick("0");
     expect(handleSpy).toHaveBeenCalled();
