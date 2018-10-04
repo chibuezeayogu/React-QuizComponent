@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`QuizQuestion Component should render correctly 1`] = `
+<React.Fragment>
+  <div
+    className="question"
+  />
+  <div
+    className="answers-container"
+  />
+</React.Fragment>
+`;
