@@ -8,9 +8,57 @@
     },
     {
       "id": 2,
-      "instructionText": "What's your favorite number?",
-      "answerOptions": ["1", "2", "3", "4"],
-      "answer": "4"
+      "instructionText": "Greek civilization was flourished in the year?",
+      "answerOptions": ["1000 BC", "900 BC", "700 BC", "800 BC"],
+      "answer": "800 BC"
+    },
+    {
+      "id": 3,
+      "instructionText": "What is the largest continent on earth?",
+      "answerOptions": ["Asia", "Africa", "North America", "South America"],
+      "answer": "Asia"
+    },
+    {
+      "id": 4,
+      "instructionText": "Rome was founded in the year?",
+      "answerOptions": ["754 BC", "755 BC", "753 BC", "756 BC"],
+      "answer": "753 BC"
+    },
+    {
+      "id": 5,
+      "instructionText": " Who was first to reach the South Pole?",
+      "answerOptions": ["Capt. Austin", "Capt. White", "Capt. Peter", "Capt. Amundsen"],
+      "answer": "Capt. Amundsen"
+    },
+    {
+      "id": 6,
+      "instructionText": "Buckingham Palace became the official royal residence during the reign of which British monarch?",
+      "answerOptions": ["Queen Elizbeth", "Queen Veronica", "Queen Victoria", "Queen Elizbeth II"],
+      "answer": "Queen Victoria"
+    },
+    {
+      "id": 7,
+      "instructionText": "In which year Bangladesh was formed as Separate Country?",
+      "answerOptions": ["1973", "1971", "1197", "1974"],
+      "answer": "1971"
+    },
+    {
+      "id": 8,
+      "instructionText": "The Great Pyramid of Giza was built for which Egyptian ruler?",
+      "answerOptions": ["Narmer", "Menes", "Cheops", "Khufu"],
+      "answer": "Cheops"
+    },
+    {
+      "id": 9,
+      "instructionText": "World War I commenced in?",
+      "answerOptions": ["1919", "1914", "1913", "1917"],
+      "answer": "1914"
+    },
+    {
+      "id": 10,
+      "instructionText": "Who is considered the \"Father of the Constitution\"?",
+      "answerOptions": ["James Madison", "Peter Madison", "Paul Madison", "Solomon Madison"],
+      "answer": "James Madison"
     }
   ]
 }
