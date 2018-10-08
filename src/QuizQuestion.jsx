@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { shape, func, string, number, array } from 'prop-types';
 
 import QuizQuestionButton from './QuizQuestionButton'
@@ -48,7 +48,7 @@ class QuizQuestion extends Component {
     const { incorrectAnswer } = this.state;
 
     return (
-      <>
+      <Fragment>
       <div className="question">
         {quizQuestion.instructionText}
       </div>
@@ -65,7 +65,7 @@ class QuizQuestion extends Component {
           <p className='error'>Sorry, that's not right</p> : 
           null
         }
-      </>                
+      </Fragment>                
     )
   }
 }
